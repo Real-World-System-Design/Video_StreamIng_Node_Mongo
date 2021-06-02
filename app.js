@@ -2,7 +2,7 @@ const fastify = require('fastify')({
     logger: "true"
 });
 
-const routes = require('./routes/Car');
+const routes = require('./routes/User');
 
 routes.forEach((route, index) => {
     fastify.route(route);
@@ -10,7 +10,7 @@ routes.forEach((route, index) => {
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/fastify', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost:27017/netflix', {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
     console.log(`sucessfully connected to the db`);
 }).catch((e) => {
